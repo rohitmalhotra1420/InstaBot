@@ -6,7 +6,7 @@ from textblob.sentiments import NaiveBayesAnalyzer
 # at=Access token and bu=base url
 
 
-at='2111031309.b5a55d7.8ff165d320704879adc17ddd38616d99'
+at=''
 bu='https://api.instagram.com/v1/'
 
 
