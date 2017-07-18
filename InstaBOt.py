@@ -6,7 +6,7 @@ from textblob.sentiments import NaiveBayesAnalyzer
 # at=Access token and bu=base url
 
 
-at=''
+at='2111031309.b5a55d7.8ff165d320704879adc17ddd38616d99'
 bu='https://api.instagram.com/v1/'
 
 
@@ -212,6 +212,7 @@ def get_users_post(user_name):
                         else:
                             Caption.append('No caption')
                     a=raw_input("Enter a caption related word.")
+                    flag = False
                     for y in Caption:
                         if a in y:
                             c=Caption.index(y)
@@ -222,9 +223,10 @@ def get_users_post(user_name):
                             print 'Your image has been downloaded!'
                             print "Likes:"+likes
                             print "Your word was found in Caption: "+y
-                        else:
-                            print "Caption not found in any post."
-                            break
+                            flag = True
+
+                    if not flag:
+                        print 'Caption was not found in any post'
 
 
                 elif post_choice==6:
@@ -440,10 +442,6 @@ def targeted_comments(user_name):
                         else:
                             print "Unable to add comment. Try again!"
 
-
-                    else:
-                        print "Caption not found in any post."
-                        break
             else:
                 print "There is no comment on the post"
         else:
